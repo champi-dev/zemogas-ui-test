@@ -7,5 +7,5 @@
 4. [x] Config pipelines ci/cd
 
 ### Task 1:
-1. [] Recover initial design
+1. [x] Recover initial design
 2. [] Split it in small components
