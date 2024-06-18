@@ -24,13 +24,14 @@ jobs:
     - name: Run tests
       run: npm test
 
+    - name: Build project
+      run: npm run build
+
     - name: Install Firebase CLI
-      run: npm install -g firebase-tools && firebase login
+      run: npm install -g firebase-tools
 
     - name: Deploy to Firebase
       env:
-        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
-        echo $FIREBASE_SERVICE_ACCOUNT > ${HOME}/firebase-service-account.json
-        firebase use --add
-        firebase deploy --only hosting --token "$(firebase login:ci --account-file ${HOME}/firebase-service-account.json)"
+        firebase deploy --only hosting --token "$FIREBASE_TOKEN"
