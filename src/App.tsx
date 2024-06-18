@@ -34,7 +34,7 @@ function App() {
                   type="text"
                 />
                 <button className="nav__search icon-button" type="submit">
-                  <img src="assets/img/search.svg" alt="search" />
+                  <img src="/assets/img/search.svg" alt="search" />
                 </button>
               </form>
             </li>
@@ -44,9 +44,9 @@ function App() {
       <header className="hero">
         <img
           className="hero__background"
-          srcSet="assets/img/pope-francis.png 750w, assets/img/pope-francis.@2x.png 1440w"
+          srcSet="/assets/img/pope-francis.png 750w, /assets/img/pope-francis.@2x.png 1440w"
           sizes="(min-width: 750px) 1440px, 100vw"
-          src="assets/img/pope-francis.png"
+          src="/assets/img/pope-francis.png"
           alt="Pope Francis"
         />
         <div className="max-centered">
@@ -81,10 +81,10 @@ function App() {
               <p className="featured-card__cta">What’s Your Veredict?</p>
               <div className="featured-card__buttons">
                 <button className="icon-button" aria-label="thumbs up">
-                  <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                  <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
                 </button>
                 <button className="icon-button" aria-label="thumbs down">
-                  <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                  <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
                 </button>
               </div>
             </div>
@@ -137,10 +137,10 @@ function App() {
           aria-label="Submit a name"
         >
           <img
-            srcSet="assets/img/bg-people.png 750w, assets/img/bg-people.@2x.png 1440w"
+            srcSet="/assets/img/bg-people.png 750w, /assets/img/bg-people.@2x.png 1440w"
             sizes="(min-width: 750px) 1440px, 100vw"
             className="banner__background"
-            src="assets/img/bg-people.png"
+            src="/assets/img/bg-people.png"
             alt=""
             role="none"
           />
