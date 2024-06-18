@@ -8,4 +8,6 @@
 
 ### Task 1:
 1. [x] Recover initial design
-2. [] Split it in small components
+2. [] Fix pipeline
+3. [] Fix broken images on deployed site
+4. [] Split it in small components
