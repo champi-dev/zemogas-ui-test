@@ -20,7 +20,7 @@ const SingleVotingCard = ({ celebrity }: SingleVotingCardProps) => {
         createdAt={celebrity.createdAt}
       />
 
-      <CardBottom />
+      <CardBottom votes={celebrity.votes} />
     </div>
   )
 }
