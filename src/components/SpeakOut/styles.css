@@ -1,0 +1,35 @@
+.banner-top .banner__left {
+  flex-basis: 40%;
+  padding-right: 1rem;
+}
+
+.banner-top .banner__left > .banner__hairline {
+  color: var(--color-dark-gray);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -.07rem;
+}
+
+.banner-top .banner__left > .banner__title {
+  display: block;
+  color: var(--color-dark-gray);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -.05rem;
+}
+
+.banner-top .banner__right {
+  flex-basis: 60%;
+}
+
+.banner-top .banner__text {
+  margin: 0;
+  color: var(--color-dark-gray);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -.05rem;
+}
+
+/* .banner-top .icon-button {
+  display: none;
+} */
