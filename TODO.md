@@ -17,7 +17,7 @@
 2. [x] Ensure Lato font is installed and being used
 3. [x] Refactor PreviousRulings component
 4. [x] Add mockData to PreviousRulings component
-5. [] Add character restriction in SingleVotingCard's description
+5. [x] Add character restriction in SingleVotingCard's description
 6. [] Format time in SingleVotingCard
 7. [] Format category in SingleVotingCard
 8. [] Initial unit tests

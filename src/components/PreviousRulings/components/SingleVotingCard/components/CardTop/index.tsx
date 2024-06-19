@@ -1,4 +1,5 @@
 import './styles.css'
+import { truncateString } from '@/utils'
 
 interface CardTopProps {
   name: string
@@ -18,7 +19,7 @@ const CardTop = ({ name, description, category, createdAt }: CardTopProps) => {
         <span>{name}</span>
       </div>
 
-      <span className="top-subtitle">{description}</span>
+      <span className="top-subtitle">{truncateString(description)}</span>
 
       <span className="top-legend">{`${createdAt} in ${category}`}</span>
 
