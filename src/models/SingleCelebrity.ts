@@ -3,7 +3,7 @@ export interface SingleCelebrity {
   description: string
   category: string
   picture: string
-  lastUpdated: string
+  createdAt: string
   votes: {
     positive: number
     negative: number
