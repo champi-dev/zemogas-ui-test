@@ -1,2 +1,3 @@
 import Nav from './Nav'
-export { Nav }
+import Header from './Header'
+export { Nav, Header }
