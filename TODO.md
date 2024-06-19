@@ -13,7 +13,9 @@
 4. [x] Split it in small components
 
 ### Task 2:
-1. [x] Build missing component html/css
+1. [x] Build PreviousRulings component html/css
 2. [] Ensure Lato font is installed and being used
-3. [] Adjust responsive design
-4. [] Initial unit tests
+3. [] Refactor PreviousRulings component
+4. [] Add mockData to PreviousRulings component
+5. [] Initial unit tests
+6. [] Adjust responsive design
