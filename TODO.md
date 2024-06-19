@@ -11,5 +11,8 @@
 2. [x] Fix pipeline
 3. [x] Fix broken images on deployed site
 4. [x] Split it in small components
-5. [] Build missing component html/css
-6. [] Adjust responsive design
+
+### Task 2:
+1. [] Build missing component html/css
+2. [] Adjust responsive design
+3. [] Initial unit tests
