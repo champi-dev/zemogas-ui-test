@@ -7,15 +7,16 @@ import {
   Footer,
   PreviousRulings,
 } from './components'
+import celebrities from './mockData/celebrities.json'
 
-function App() {
+const App = () => {
   return (
     <body>
       <Nav />
       <Header />
       <div className="max-centered">
         <SpeakOut />
-        <PreviousRulings />
+        <PreviousRulings celebrities={celebrities.data} />
         <SubmitAName />
         <hr role="separator"></hr>
         <Footer />

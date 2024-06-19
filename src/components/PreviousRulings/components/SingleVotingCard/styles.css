@@ -1,13 +1,19 @@
 .single-voting-card {
   height: 300px;
-  width: 300px;
+  min-width: 300px;
   position: relative;
+  margin-right: 12px;
+}
+
+.single-voting-card:last-child {
+  margin-right: unset;
 }
 
 .single-voting-card img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .single-voting-card .dark-gradient {

@@ -1,6 +1,13 @@
 import './styles.css'
 
-const CardTop = () => {
+interface CardTopProps {
+  name: string
+  description: string
+  category: string
+  createdAt: string
+}
+
+const CardTop = ({ name, description, category, createdAt }: CardTopProps) => {
   return (
     <div className="single-voting-card__top">
       <div className="top-title">
@@ -8,14 +15,12 @@ const CardTop = () => {
           <img src="/assets/img/thumbs-down.svg" alt="thumbs up" />
         </div>
 
-        <span>Pope Francis</span>
+        <span>{name}</span>
       </div>
 
-      <span className="top-subtitle">
-        Vestibulum diam ante, porttitor a odio eget, rhoncus. Eu velit
-      </span>
+      <span className="top-subtitle">{description}</span>
 
-      <span className="top-legend">1 month ago in Entertainment</span>
+      <span className="top-legend">{`${createdAt} in ${category}`}</span>
 
       <div className="top-actions">
         <div className="img-container">

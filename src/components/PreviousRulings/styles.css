@@ -6,4 +6,10 @@
 
 .previous-rulings .previous-rulings__voting-cards {
   display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.previous-rulings .previous-rulings__voting-cards::-webkit-scrollbar {
+  display: none;
 }

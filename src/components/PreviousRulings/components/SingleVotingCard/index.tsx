@@ -1,20 +1,26 @@
 import './styles.css'
 import { CardTop, CardBottom } from './components'
+import { type SingleCelebrity } from '@/models'
 
-const SingleVotingCard = () => {
+interface SingleVotingCardProps {
+  celebrity: SingleCelebrity
+}
+
+const SingleVotingCard = ({ celebrity }: SingleVotingCardProps) => {
   return (
     <div className="single-voting-card">
-      <img
-        srcSet="/assets/img/pope-francis.png 750w, /assets/img/pope-francis.@2x.png 1440w"
-        sizes="(min-width: 750px) 1440px, 100vw"
-        src="/assets/img/pope-francis.png"
-        alt="Pope Francis"
-      />
+      <img src={celebrity.picture} alt={celebrity.name} />
 
       <div className="dark-gradient"></div>
 
-      <CardTop />
-      <CardBottom />
+      <CardTop
+        name={celebrity.name}
+        description={celebrity.description}
+        category={celebrity.category}
+        createdAt={celebrity.createdAt}
+      />
+
+      <CardBottom votes={celebrity.votes} />
     </div>
   )
 }

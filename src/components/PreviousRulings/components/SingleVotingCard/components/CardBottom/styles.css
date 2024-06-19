@@ -7,7 +7,6 @@
 }
 
 .single-voting-card__bottom .bottom-left {
-  width: 50%;
   height: 100%;
   background-color: rgba(60, 187, 180, 0.6);
   padding-left: 10px;
@@ -35,7 +34,6 @@
 }
 
 .single-voting-card__bottom .bottom-right {
-  width: 50%;
   height: 100%;
   background-color: rgba(249, 173, 29, 0.6);
   padding-right: 10px;
