@@ -40,7 +40,7 @@
   margin-bottom: 12px;
 }
 
-.single-voting-card span.top-legend {
+.single-voting-card span.top-legend, .single-voting-card span.capitalize {
   padding: unset;
   margin: unset;
   white-space: unset;

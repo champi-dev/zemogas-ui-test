@@ -19,7 +19,7 @@
 4. [x] Add mockData to PreviousRulings component
 5. [x] Add character restriction in SingleVotingCard's description
 6. [x] Format time in SingleVotingCard
-7. [] Format category in SingleVotingCard
+7. [x] Format category in SingleVotingCard
 8. [] Initial unit tests
 9. [] Adjust responsive design
 

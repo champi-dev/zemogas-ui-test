@@ -21,7 +21,10 @@ const CardTop = ({ name, description, category, createdAt }: CardTopProps) => {
 
       <span className="top-subtitle">{truncateString(description)}</span>
 
-      <span className="top-legend">{`${timeAgo(createdAt)} in ${category}`}</span>
+      <span className="top-legend">
+        {`${timeAgo(createdAt)} in `}
+        <span className="capitalize">{category}</span>
+      </span>
 
       <div className="top-actions">
         <div className="img-container">
