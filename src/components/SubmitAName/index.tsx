@@ -21,7 +21,9 @@ const SubmitAName = () => {
         </h2>
       </div>
       <div className="banner__right">
-        <button className="banner__cta">Submit a name</button>
+        <button className="banner__cta" data-testid="submit-name">
+          Submit a name
+        </button>
       </div>
     </aside>
   )
