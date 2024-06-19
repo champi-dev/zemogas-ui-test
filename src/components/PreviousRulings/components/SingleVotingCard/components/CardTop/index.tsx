@@ -1,5 +1,5 @@
 import './styles.css'
-import { truncateString } from '@/utils'
+import { truncateString, timeAgo } from '@/utils'
 
 interface CardTopProps {
   name: string
@@ -21,7 +21,7 @@ const CardTop = ({ name, description, category, createdAt }: CardTopProps) => {
 
       <span className="top-subtitle">{truncateString(description)}</span>
 
-      <span className="top-legend">{`${createdAt} in ${category}`}</span>
+      <span className="top-legend">{`${timeAgo(createdAt)} in ${category}`}</span>
 
       <div className="top-actions">
         <div className="img-container">
