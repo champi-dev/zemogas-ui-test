@@ -10,4 +10,9 @@
 1. [x] Recover initial design
 2. [x] Fix pipeline
 3. [x] Fix broken images on deployed site
-4. [] Split it in small components
+4. [x] Split it in small components
+
+### Task 2:
+1. [] Build missing component html/css
+2. [] Adjust responsive design
+3. [] Initial unit tests
