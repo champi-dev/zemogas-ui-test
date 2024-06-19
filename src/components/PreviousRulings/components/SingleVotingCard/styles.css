@@ -1,0 +1,77 @@
+.single-voting-card {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.single-voting-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.single-voting-card .dark-gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
+  position: absolute;
+  top: 0;
+}
+
+.single-voting-card .top-title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.single-voting-card span.top-subtitle {
+  padding: unset;
+  margin: unset;
+  white-space: unset;
+  overflow: unset;
+  text-overflow: unset;
+  font-size: 15px;
+  margin-left: 34px;
+  margin-bottom: 12px;
+}
+
+.single-voting-card span.top-legend {
+  padding: unset;
+  margin: unset;
+  white-space: unset;
+  overflow: unset;
+  text-overflow: unset;
+  font-size: 15px;
+  align-self: flex-end;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.single-voting-card .top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.single-voting-card .top-actions .img-container {
+  margin: unset;
+}
+
+.single-voting-card .top-actions .img-container {
+  margin: unset;
+  background-color: rgba(60, 187, 180, 0.8);
+}
+
+.single-voting-card .top-actions .img-container.right {
+  margin: unset;
+  margin-left: 12px;
+  margin-right: 12px;
+  background-color: rgba(251, 189, 74, 1);
+}
+
+.single-voting-card .top-actions .vote-btn {
+  color: #FFF;
+  width: 107px;
+  height: 38px;
+  border: 1px solid #FFF;
+  background: rgba(0, 0, 0, 0.60);
+}
