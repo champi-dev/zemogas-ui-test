@@ -238,6 +238,10 @@ main h2 {
   display: contents;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 @media all and (min-width: 500px) {
   .banner-top .banner__left {
       flex-basis: 30%;
