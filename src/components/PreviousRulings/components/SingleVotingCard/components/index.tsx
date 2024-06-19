@@ -1,2 +1,3 @@
 import CardTop from './CardTop'
-export { CardTop }
+import CardBottom from './CardBottom'
+export { CardTop, CardBottom }
