@@ -15,4 +15,9 @@ export default defineConfig({
     assetsDir: 'assets',
   },
   publicDir: 'public',
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts',
+  },
 })

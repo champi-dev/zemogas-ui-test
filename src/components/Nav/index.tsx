@@ -25,13 +25,18 @@ const Nav = () => {
             <a href="#">Login / Sign Up</a>
           </li>
           <li>
-            <form action="javascript:void(0)">
+            <form>
               <input
                 className="nav__search-input"
                 aria-label="search"
                 type="text"
+                data-testid="search-input"
               />
-              <button className="nav__search icon-button" type="submit">
+              <button
+                className="nav__search icon-button"
+                type="submit"
+                data-testid="submit-btn"
+              >
                 <img src="/assets/img/search.svg" alt="search" />
               </button>
             </form>
