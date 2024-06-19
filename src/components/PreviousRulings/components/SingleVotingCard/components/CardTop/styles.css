@@ -1,0 +1,41 @@
+.single-voting-card__top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+  padding-right: 34px;
+}
+
+.single-voting-card__top .img-container {
+  background-color: rgba(251, 189, 74, 1);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.single-voting-card__top .img-container img {
+  width: 15px;
+  height: 15px;
+}
+
+.single-voting-card__top span {
+  width: 240.171px;
+  color: #FFF;
+  font-family: Lato;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 4px;
+}
