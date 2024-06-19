@@ -1,7 +1,12 @@
 .single-voting-card {
   height: 300px;
-  width: 300px;
+  min-width: 300px;
   position: relative;
+  margin-right: 12px;
+}
+
+.single-voting-card:last-child {
+  margin-right: unset;
 }
 
 .single-voting-card img {
