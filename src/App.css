@@ -201,36 +201,6 @@ hr[role="separator"] {
   pointer-events: none;
 }
 
-.banner-bottom {
-  flex-direction: column;
-  padding: 1rem 3rem;
-  margin-top: 2rem;
-}
-
-.banner-bottom .banner__heading {
-  position: relative;
-  margin: 0 0 1rem;
-  color: var(--color-dark-gray);
-  font-size: 2rem;
-  font-weight: 400;
-  text-align: center;
-}
-
-.banner-bottom .banner__right {
-  width: 100%;
-}
-
-.banner-bottom .banner__cta {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 1rem 0;
-  border: 2px solid var(--color-darker-background);
-  background: transparent;
-  color: var(--color-darker-gray);
-  font-size: 1.5rem;
-}
-
 main[role="main"] {
   padding: 0 1rem;
   margin-top: 2rem;

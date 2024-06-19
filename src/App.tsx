@@ -1,6 +1,5 @@
-import React from 'react'
 import './App.css'
-import { Nav, Header, SpeakOut } from './components'
+import { Nav, Header, SpeakOut, SubmitAName } from './components'
 
 function App() {
   return (
@@ -14,28 +13,7 @@ function App() {
             👉 Your code goes here 👈
             <!-- End: Implementation --> */}
         </main>
-        <aside
-          className="banner banner-bottom"
-          role="doc-tip"
-          aria-label="Submit a name"
-        >
-          <img
-            srcSet="/assets/img/bg-people.png 750w, /assets/img/bg-people.@2x.png 1440w"
-            sizes="(min-width: 750px) 1440px, 100vw"
-            className="banner__background"
-            src="/assets/img/bg-people.png"
-            alt=""
-            role="none"
-          />
-          <div className="banner__left">
-            <h2 className="banner__heading">
-              Is there anyone else you would want us to add?
-            </h2>
-          </div>
-          <div className="banner__right">
-            <button className="banner__cta">Submit a name</button>
-          </div>
-        </aside>
+        <SubmitAName />
         <hr role="separator"></hr>
         <footer className="footer">
           <div className="footer__links">
