@@ -13,6 +13,6 @@
 4. [x] Split it in small components
 
 ### Task 2:
-1. [] Build missing component html/css
+1. [x] Build missing component html/css
 2. [] Adjust responsive design
 3. [] Initial unit tests
