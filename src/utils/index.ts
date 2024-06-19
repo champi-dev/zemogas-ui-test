@@ -1,2 +1,3 @@
 import { truncateString } from './truncateString'
-export { truncateString }
+import { timeAgo } from './timeAgo'
+export { truncateString, timeAgo }
