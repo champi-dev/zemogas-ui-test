@@ -1,5 +1,12 @@
 import './App.css'
-import { Nav, Header, SpeakOut, SubmitAName, Footer } from './components'
+import {
+  Nav,
+  Header,
+  SpeakOut,
+  SubmitAName,
+  Footer,
+  PreviousRulings,
+} from './components'
 
 function App() {
   return (
@@ -8,11 +15,7 @@ function App() {
       <Header />
       <div className="max-centered">
         <SpeakOut />
-        <main role="main">
-          {/* <!-- Start: Implementation -->
-            👉 Your code goes here 👈
-            <!-- End: Implementation --> */}
-        </main>
+        <PreviousRulings />
         <SubmitAName />
         <hr role="separator"></hr>
         <Footer />
