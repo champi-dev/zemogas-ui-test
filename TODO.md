@@ -14,7 +14,7 @@
 
 ### Task 2:
 1. [x] Build PreviousRulings component html/css
-2. [] Ensure Lato font is installed and being used
+2. [x] Ensure Lato font is installed and being used
 3. [] Refactor PreviousRulings component
 4. [] Add mockData to PreviousRulings component
 5. [] Initial unit tests
