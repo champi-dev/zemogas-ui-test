@@ -1,0 +1,87 @@
+.previous-rulings {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+}
+
+.previous-rulings .previous-rulings__voting-cards {
+  display: flex;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom {
+  position: absolute;
+  bottom: 0;
+  height: 36px;
+  width: 100%;
+  display: flex;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-left {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(60, 187, 180, 0.6);
+  padding-left: 10px;
+  display: flex;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-left .bottom-left__container  {
+  display: flex;
+  align-items: center;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-left .bottom-left__container img {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-left .bottom-left__container span {
+  color: #FFF;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-right {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(249, 173, 29, 0.6);
+  padding-right: 10px;
+  display: flex;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-right .bottom-right__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-right .bottom-right__container img {
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
+}
+
+.previous-rulings .previous-rulings__voting-cards .single-voting-card .single-voting-card__bottom .bottom-right .bottom-right__container span {
+  color: #FFF;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

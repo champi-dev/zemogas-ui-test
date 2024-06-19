@@ -14,5 +14,6 @@
 
 ### Task 2:
 1. [x] Build missing component html/css
-2. [] Adjust responsive design
-3. [] Initial unit tests
+2. [] Ensure Lato font is installed and being used
+3. [] Adjust responsive design
+4. [] Initial unit tests
