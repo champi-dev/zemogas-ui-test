@@ -4,6 +4,7 @@ const Header = () => {
   return (
     <header className="hero">
       <img
+        data-testid="hero-background"
         className="hero__background"
         srcSet="/assets/img/pope-francis.png 750w, /assets/img/pope-francis.@2x.png 1440w"
         sizes="(min-width: 750px) 1440px, 100vw"
@@ -17,7 +18,7 @@ const Header = () => {
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="featured-card__hairline">What's your opinion on</p>
             <h2 className="featured-card__title">Pope Francis?</h2>
-            <p className="featured-card__desc">
+            <p className="featured-card__desc" data-testid="description">
               He’s talking tough on clergy sexual abuse, or is he just another
               pervert protector? (thumbs down) or a true pedophile punishing
               pontiff? (thumbs up)
@@ -41,10 +42,19 @@ const Header = () => {
             </p>
             <p className="featured-card__cta">What’s Your Veredict?</p>
             <div className="featured-card__buttons">
-              <button className="icon-button" aria-label="thumbs up">
+              <button
+                className="icon-button"
+                aria-label="thumbs up"
+                data-testid="thumbs-up"
+              >
                 <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
               </button>
-              <button className="icon-button" aria-label="thumbs down">
+
+              <button
+                className="icon-button"
+                aria-label="thumbs down"
+                data-testid="thumbs-down"
+              >
                 <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
               </button>
             </div>
