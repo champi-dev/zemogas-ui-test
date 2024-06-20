@@ -18,12 +18,19 @@ const TabletDesktop = ({ className }: TabletDesktopProps) => {
         <TopDropdown onSelected={setSelectedMode} />
       </div>
 
-      <div className="main__rulings">
-        <SingleVotingCard
-          mode={selectedMode}
-          dataTestId="single-voting-card"
-          celebrity={celebrities.data[0]}
-        />
+      <div className={`main__rulings ${selectedMode}`}>
+        {celebrities.data.map((singleCeleb) => (
+          <div
+            key={`${singleCeleb.name}${singleCeleb.description}`}
+            className={`card-container ${selectedMode}`}
+          >
+            <SingleVotingCard
+              mode={selectedMode}
+              dataTestId="single-voting-card"
+              celebrity={singleCeleb}
+            />
+          </div>
+        ))}
       </div>
     </main>
   )
