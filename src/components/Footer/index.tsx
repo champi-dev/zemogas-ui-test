@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="footer__social">
         <span>Follow us</span>
         <ul>
-          <li>
+          <li data-testid="linkA">
             <a href="#">
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -30,7 +30,7 @@ const Footer = () => {
               </svg>
             </a>
           </li>
-          <li>
+          <li data-testid="linkB">
             <a href="#">
               <svg width="26" height="23" xmlns="http://www.w3.org/2000/svg">
                 <path

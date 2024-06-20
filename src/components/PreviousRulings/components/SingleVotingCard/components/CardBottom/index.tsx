@@ -1,19 +1,20 @@
 import './styles.css'
 
 interface CardBottomProps {
+  dataTestId: string
   votes: {
     positive: number
     negative: number
   }
 }
 
-const CardBottom = ({ votes }: CardBottomProps) => {
+const CardBottom = ({ dataTestId, votes }: CardBottomProps) => {
   const totalVotes = votes.positive + votes.negative
   const positivePercentage = Math.round((votes.positive / totalVotes) * 100)
   const negativePercentage = Math.round((votes.negative / totalVotes) * 100)
 
   return (
-    <div className="single-voting-card__bottom">
+    <div className="single-voting-card__bottom" data-testid={dataTestId}>
       <div className="bottom-left" style={{ width: `${positivePercentage}%` }}>
         <div className="bottom-left__container">
           <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
