@@ -2,15 +2,22 @@ import './styles.css'
 import { truncateString, timeAgo } from '@/utils'
 
 interface CardTopProps {
+  dataTestId: string
   name: string
   description: string
   category: string
   createdAt: string
 }
 
-const CardTop = ({ name, description, category, createdAt }: CardTopProps) => {
+const CardTop = ({
+  dataTestId,
+  name,
+  description,
+  category,
+  createdAt,
+}: CardTopProps) => {
   return (
-    <div className="single-voting-card__top">
+    <div className="single-voting-card__top" data-testid={dataTestId}>
       <div className="top-title">
         <div className="img-container">
           <img src="/assets/img/thumbs-down.svg" alt="thumbs up" />
