@@ -1,9 +1,18 @@
+import { useState } from 'react'
 import './styles.css'
 
 const TopDropdown = () => {
+  const [selected, setSelected] = useState<'List' | 'Grid'>('List')
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onOptionClicked = (option: 'List' | 'Grid') => {
+    setSelected(option)
+    setIsOpen(false)
+  }
+
   return (
-    <div className="top-dropdown">
-      <span>List</span>
+    <div className="top-dropdown" onClick={() => setIsOpen(true)}>
+      <span>{selected}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="11"
@@ -18,6 +27,31 @@ const TopDropdown = () => {
           fill="#333333"
         />
       </svg>
+
+      <>
+        {isOpen ? (
+          <ul>
+            <li
+              onClick={(e) => {
+                e.stopPropagation()
+                onOptionClicked('List')
+              }}
+            >
+              List
+            </li>
+            <li
+              onClick={(e) => {
+                e.stopPropagation()
+                onOptionClicked('Grid')
+              }}
+            >
+              Grid
+            </li>
+          </ul>
+        ) : (
+          <></>
+        )}
+      </>
     </div>
   )
 }
