@@ -1,0 +1,21 @@
+.winner-thumb {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.winner-thumb.up {
+  background-color: rgba(60, 187, 180, 0.8);
+}
+
+.winner-thumb.down {
+  background-color: rgba(251, 189, 74, 1);
+}
+
+.winner-thumb img {
+  width: 15px;
+  height: 15px;
+}

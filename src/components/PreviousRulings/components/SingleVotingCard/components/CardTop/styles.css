@@ -10,21 +10,6 @@
   padding-right: 34px;
 }
 
-.single-voting-card__top .img-container {
-  background-color: rgba(251, 189, 74, 1);
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.single-voting-card__top .img-container img {
-  width: 15px;
-  height: 15px;
-}
-
 .single-voting-card__top span {
   width: 240.171px;
   color: #FFF;

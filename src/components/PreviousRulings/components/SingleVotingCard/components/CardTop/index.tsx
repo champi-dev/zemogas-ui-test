@@ -1,7 +1,7 @@
 import './styles.css'
 import { useState } from 'react'
 import { truncateString, timeAgo } from '@/utils'
-import { VoteActions } from '../../../../../index'
+import { VoteActions, WinnerThumb } from '../../../../../index'
 
 interface CardTopProps {
   dataTestId: string
@@ -9,6 +9,10 @@ interface CardTopProps {
   description: string
   category: string
   createdAt: string
+  votes: {
+    positive: number
+    negative: number
+  }
 }
 
 const CardTop = ({
@@ -17,15 +21,14 @@ const CardTop = ({
   description,
   category,
   createdAt,
+  votes,
 }: CardTopProps) => {
   const [hasVoted, setHasVoted] = useState(false)
 
   return (
     <div className="single-voting-card__top" data-testid={dataTestId}>
       <div className="top-title">
-        <div className="img-container">
-          <img src="/assets/img/thumbs-down.svg" alt="thumbs up" />
-        </div>
+        <WinnerThumb votes={votes} />
 
         <span>{name}</span>
       </div>

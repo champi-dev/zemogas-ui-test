@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.top-actions .img-container img {
+  width: 15px;
+  height: 15px;
+}
+
 .top-actions .img-container {
   margin: unset;
   background-color: rgba(60, 187, 180, 0.8);

@@ -26,9 +26,10 @@
 
 ### Task 3:
 1. [x] Add ui logic to PreviousRulings
-2. [] Add ui logic to Header
-3. [] Add ui logic to SpeakOut
-4. [] Add ui logic to SubmitAName
-5. [] Add past trials route
-6. [] Add how it works route
-7. [] Add search route
+2. [] Add context logic to handle voting
+3. [] Add ui logic to Header
+4. [] Add ui logic to SpeakOut
+5. [] Add ui logic to SubmitAName
+6. [] Add past trials route
+7. [] Add how it works route
+8. [] Add search route

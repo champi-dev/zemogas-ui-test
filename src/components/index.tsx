@@ -5,6 +5,7 @@ import SubmitAName from './SubmitAName'
 import Footer from './Footer'
 import PreviousRulings from './PreviousRulings'
 import VoteActions from './VoteActions'
+import WinnerThumb from './WinnerThumb'
 export {
   Nav,
   Header,
@@ -13,4 +14,5 @@ export {
   Footer,
   PreviousRulings,
   VoteActions,
+  WinnerThumb,
 }

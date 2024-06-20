@@ -20,6 +20,7 @@ describe('CardTop', () => {
         description="testDescription"
         category="testCategory"
         createdAt="2020-03-10T23:08:57.892Z"
+        votes={{ positive: 45, negative: 100 }}
       />,
     )
 

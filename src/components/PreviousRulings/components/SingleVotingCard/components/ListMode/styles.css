@@ -71,15 +71,8 @@
   margin-bottom: 12px;
 }
 
-.list-mode .list-mode__winner-thumb {
+.list-mode .winner-thumb {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(251, 189, 74, 1);
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4px;
 }
