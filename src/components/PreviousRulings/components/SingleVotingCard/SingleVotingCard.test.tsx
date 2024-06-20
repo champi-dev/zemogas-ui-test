@@ -5,7 +5,12 @@ import celebrities from '@/mockData/celebrities.json'
 
 describe('SingleVotingCard', () => {
   it('renders', () => {
-    render(<SingleVotingCard celebrity={celebrities.data[0]} />)
+    render(
+      <SingleVotingCard
+        dataTestId="single-voting-card"
+        celebrity={celebrities.data[0]}
+      />,
+    )
 
     const celebrityImg = screen.getByTestId('celebrity-img')
     expect(celebrityImg).toBeInTheDocument()
