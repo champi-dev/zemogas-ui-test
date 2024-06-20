@@ -4,7 +4,12 @@ import CardBottom from './index'
 
 describe('CardBottom', () => {
   it('renders', () => {
-    render(<CardBottom votes={{ positive: 50, negative: 22 }} />)
+    render(
+      <CardBottom
+        dataTestId="card-bottom"
+        votes={{ positive: 50, negative: 22 }}
+      />,
+    )
 
     const positivePer = screen.getByText('69%')
     expect(positivePer).toBeInTheDocument()
