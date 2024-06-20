@@ -5,6 +5,7 @@ export interface SingleCelebrity {
   category: string
   picture: string
   createdAt: string
+  expiresInSeconds: number
   votes: {
     positive: number
     negative: number

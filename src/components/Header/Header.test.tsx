@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Header from './index'
+import { ManagerProvider } from '@/context'
 
 describe('Header', () => {
   it('renders', () => {
-    render(<Header />)
+    render(
+      <ManagerProvider>
+        <Header />
+      </ManagerProvider>,
+    )
 
     const heroBg = screen.getByTestId('hero-background')
     expect(heroBg).toBeInTheDocument()
@@ -12,14 +17,11 @@ describe('Header', () => {
     const hairLine = screen.getByText("What's your opinion on")
     expect(hairLine).toBeInTheDocument()
 
-    const title = screen.getByText('Pope Francis?')
+    const title = screen.getByText('Kanye West?')
     expect(title).toBeInTheDocument()
 
     const description = screen.getByTestId('description')
     expect(description).toBeInTheDocument()
-
-    const moreInformation = screen.getByText('More information')
-    expect(moreInformation).toBeInTheDocument()
 
     const veredict = screen.getByText('What’s Your Veredict?')
     expect(veredict).toBeInTheDocument()
@@ -32,11 +34,5 @@ describe('Header', () => {
 
     const closingIn = screen.getByText('closing in')
     expect(closingIn).toBeInTheDocument()
-
-    const daysNumber = screen.getByText('22')
-    expect(daysNumber).toBeInTheDocument()
-
-    const days = screen.getByText('days')
-    expect(days).toBeInTheDocument()
   })
 })

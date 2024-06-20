@@ -6,7 +6,8 @@
           "description": "Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.",
           "category": "entertainment",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2FKanye_West_at_the_2009_Tribeca_Film_Festival_(crop_2).jpg?alt=media&token=a17fe0d1-d97d-428e-b223-17fe476436b2",
-          "createdAt": "2020-03-10T23:08:57.892Z",
+          "expiresInSeconds": 800000,
+          "createdAt": "2024-06-20T23:04:41.518Z",
           "votes": {
               "positive": 23,
               "negative": 36
@@ -18,7 +19,8 @@
           "description": "Born in White Plains, New York, Zuckerberg attended Harvard University, where he launched the Facebook social networking service from his dormitory room on February 4, 2004.",
           "category": "business",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2Fof-facebook-mark-zuckerberg-walks-to-lunch-following-a-news-photo-1683662107.jpg?alt=media&token=92ddc4cf-b913-462c-939a-20d984f0c920",
-          "createdAt": "2021-02-14T23:10:19.134Z",
+          "expiresInSeconds": 600000,
+          "createdAt": "2024-06-20T23:04:41.518Z",
           "votes": {
               "positive": 418,
               "negative": 324
@@ -31,6 +33,7 @@
           "category": "politics",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2FCristina-Fernandez-de-Kirchner-inauguration-December-10-2007.webp?alt=media&token=5f4b286f-5638-4147-92fb-c0fcf7581594",
           "createdAt": "2020-12-10T23:41:07.120Z",
+          "expiresInSeconds": 3600,
           "votes": {
               "positive": 45,
               "negative": 97
@@ -43,6 +46,7 @@
           "category": "politics",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2FShinzo%CC%84_Abe_and_Malala_Yousafzai_(1)_(cropped).jpg?alt=media&token=508c0a2d-215b-4837-a22d-64cbfe929010",
           "createdAt": "2020-12-10T23:41:07.120Z",
+          "expiresInSeconds": 3600,
           "votes": {
               "positive": 18,
               "negative": 3
@@ -55,6 +59,7 @@
           "category": "business",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2FElon_Musk_Colorado_2022_(cropped2).jpg?alt=media&token=bbf0afa5-2d38-4e27-8af5-2233b5bf8e77",
           "createdAt": "2020-12-20T23:43:38.041Z",
+          "expiresInSeconds": 3600,
           "votes": {
               "positive": 1237,
               "negative": 894
@@ -67,6 +72,7 @@
           "category": "environment",
           "picture": "https://firebasestorage.googleapis.com/v0/b/zemogas-ui-test.appspot.com/o/celebritiesImages%2FGreta_Thunberg_in_Stckholm_(cropped_2).jpg?alt=media&token=0b9b9e0a-109b-455b-bd2d-97c799a3a34d",
           "createdAt": "2021-02-26T23:44:50.326Z",
+          "expiresInSeconds": 3600,
           "votes": {
               "positive": 118,
               "negative": 45
