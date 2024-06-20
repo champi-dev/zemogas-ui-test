@@ -15,6 +15,7 @@ describe('CardTop', () => {
   it('renders', () => {
     render(
       <CardTop
+        id="0"
         dataTestId="card-top"
         name="testName"
         description="testDescription"

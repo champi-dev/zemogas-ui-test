@@ -46,7 +46,11 @@ const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
             )}
           </span>
 
-          <VoteActions externalHasVoted={setHasVoted} />
+          <VoteActions
+            id={celebrity.id}
+            rulingType="previous"
+            externalHasVoted={setHasVoted}
+          />
         </div>
       </div>
 

@@ -20,6 +20,7 @@ const GridMode = ({ dataTestId, celebrity }: GridModeProps) => {
 
       <CardTop
         dataTestId="card-top"
+        id={celebrity.id}
         name={celebrity.name}
         description={celebrity.description}
         category={celebrity.category}

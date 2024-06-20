@@ -1,15 +1,31 @@
 import './style.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { Manager } from '@/context'
 
 interface VoteActionsProps {
+  id: string
+  rulingType: 'current' | 'previous'
   externalHasVoted: (hasVoted: boolean) => void
 }
 
-const VoteActions = ({ externalHasVoted }: VoteActionsProps) => {
+const VoteActions = ({
+  id,
+  rulingType,
+  externalHasVoted,
+}: VoteActionsProps) => {
+  const { handleVote } = useContext(Manager)
   const [hasVoted, setHasVoted] = useState(false)
   const [optionSelected, setOptionSelected] = useState<
     'up' | 'down' | undefined
   >(undefined)
+
+  const hanleVoteAction = () => {
+    handleVote({
+      id,
+      rulingType,
+      vote: optionSelected === 'up' ? 'positive' : 'negative',
+    })
+  }
 
   const isActive = (option: 'up' | 'down') =>
     option === optionSelected ? 'active' : ''
@@ -53,9 +69,14 @@ const VoteActions = ({ externalHasVoted }: VoteActionsProps) => {
       <button
         className={`vote-btn ${canVote && 'active'}`}
         data-testid="vote-now"
-        onClick={() =>
-          hasVoted ? setHasVoted(false) : canVote && setHasVoted(true)
-        }
+        onClick={() => {
+          if (hasVoted) {
+            setHasVoted(false)
+          } else if (canVote) {
+            hanleVoteAction()
+            setHasVoted(true)
+          }
+        }}
       >
         {hasVoted ? 'Vote Again' : 'Vote Now'}
       </button>

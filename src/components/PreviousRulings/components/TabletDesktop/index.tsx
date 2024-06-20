@@ -20,7 +20,7 @@ const TabletDesktop = ({ className }: TabletDesktopProps) => {
       </div>
 
       <div className={`main__rulings ${selectedMode}`}>
-        {previousRulings.map((singleCeleb) => (
+        {Object.values(previousRulings).map((singleCeleb) => (
           <div
             key={`${singleCeleb.name}${singleCeleb.description}`}
             className={`card-container ${selectedMode}`}

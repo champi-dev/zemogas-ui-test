@@ -1,4 +1,5 @@
 export interface SingleCelebrity {
+  id: string
   name: string
   description: string
   category: string
