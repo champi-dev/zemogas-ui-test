@@ -1,0 +1,120 @@
+.list-mode {
+  position: relative;
+  width: 100%;
+  height: 142px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), #ccc;
+}
+
+.list-mode .list-mode__avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+  object-position: top;
+  mask-image: linear-gradient(to right, black 50%, transparent 100%);
+}
+
+.list-mode .list-mode__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-left: 150px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 56px;
+  display: flex;
+}
+
+.list-mode .list-mode__content .content-left {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-mode .list-mode__content .content-left .celebrity-name {
+  color: #FFF;
+  font-family: Lato;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+
+.list-mode .list-mode__content .content-left .celebrity-description {
+  color: #FFF;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.list-mode .list-mode__content .content-right {
+  width: 233px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.list-mode .list-mode__content .content-right .time-ago {
+  color: #FFF;
+  text-align: right;
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 12px;
+}
+
+.list-mode .list-mode__winner-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(251, 189, 74, 1);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.content-right .top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.content-right .top-actions .img-container {
+  margin: unset;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-right .top-actions .img-container {
+  margin: unset;
+  background-color: rgba(60, 187, 180, 0.8);
+}
+
+.content-right .top-actions .img-container.right {
+  margin: unset;
+  margin-left: 12px;
+  margin-right: 12px;
+  background-color: rgba(251, 189, 74, 1);
+}
+
+.content-right .top-actions .vote-btn {
+  color: #FFF;
+  width: 107px;
+  height: 38px;
+  border: 1px solid #FFF;
+  background: rgba(0, 0, 0, 0.60);
+}

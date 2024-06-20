@@ -1,6 +1,6 @@
 import './styles.css'
-import { SingleVotingCard } from './components'
 import { type SingleCelebrity } from '@/models'
+import { Mobile, TabletDesktop } from './components'
 
 interface PreviousRulingsProps {
   celebrities: SingleCelebrity[]
@@ -8,19 +8,10 @@ interface PreviousRulingsProps {
 
 const PreviousRulings = ({ celebrities }: PreviousRulingsProps) => {
   return (
-    <main className="previous-rulings" role="main">
-      <h2>Previous Rulings</h2>
-
-      <div className="previous-rulings__voting-cards">
-        {celebrities.map((singleCeleb) => (
-          <SingleVotingCard
-            dataTestId="single-voting-card"
-            key={`${singleCeleb.name}${singleCeleb.description}`}
-            celebrity={singleCeleb}
-          />
-        ))}
-      </div>
-    </main>
+    <>
+      <Mobile className="mobile" celebrities={celebrities} />
+      <TabletDesktop className="tablet-desktop" />
+    </>
   )
 }
 

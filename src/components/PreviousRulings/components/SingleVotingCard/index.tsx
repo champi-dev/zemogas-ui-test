@@ -1,33 +1,22 @@
 import './styles.css'
-import { CardTop, CardBottom } from './components'
 import { type SingleCelebrity } from '@/models'
+import { GridMode, ListMode } from './components'
 
 interface SingleVotingCardProps {
+  mode: 'list' | 'grid'
   dataTestId: string
   celebrity: SingleCelebrity
 }
 
-const SingleVotingCard = ({ dataTestId, celebrity }: SingleVotingCardProps) => {
-  return (
-    <div className="single-voting-card" data-testid={dataTestId}>
-      <img
-        src={celebrity.picture}
-        alt={celebrity.name}
-        data-testid="celebrity-img"
-      />
-
-      <div className="dark-gradient" data-testid="dark-gradient"></div>
-
-      <CardTop
-        dataTestId="card-top"
-        name={celebrity.name}
-        description={celebrity.description}
-        category={celebrity.category}
-        createdAt={celebrity.createdAt}
-      />
-
-      <CardBottom dataTestId="card-bottom" votes={celebrity.votes} />
-    </div>
+const SingleVotingCard = ({
+  mode,
+  dataTestId,
+  celebrity,
+}: SingleVotingCardProps) => {
+  return mode === 'grid' ? (
+    <GridMode dataTestId={dataTestId} celebrity={celebrity} />
+  ) : (
+    <ListMode dataTestId={dataTestId} celebrity={celebrity} />
   )
 }
 
