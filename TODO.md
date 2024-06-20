@@ -25,5 +25,10 @@
 10. [x] Adjust responsive design
 
 ### Task 3:
-1. [] Add UI logic with mocks
-2. [] Add unit tests
+1. [x] Add ui logic to PreviousRulings
+2. [] Add ui logic to Header
+3. [] Add ui logic to SpeakOut
+4. [] Add ui logic to SubmitAName
+5. [] Add past trials route
+6. [] Add how it works route
+7. [] Add search route
