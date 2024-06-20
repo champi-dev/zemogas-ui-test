@@ -1,3 +1,10 @@
+/* 
+  [TODO]:
+  - check currentRulings every minute to see if it already expired
+    - if expired
+      - remove it from currentRulings and add it first inside previousRulings
+*/
+
 import { type ReactNode, createContext, useState, useEffect } from 'react'
 import { type SingleCelebrity } from '@/models'
 import celebrities from '@/mockData/celebrities.json'
@@ -14,12 +21,21 @@ interface ManagerContextType {
     vote: 'positive' | 'negative'
     rulingType: 'current' | 'previous'
   }) => void
+  handleRulingExpired: (
+    id: string,
+    handleGoNext: ({
+      updatedRulings,
+    }: {
+      updatedRulings: Record<string, SingleCelebrity>
+    }) => void,
+  ) => void
 }
 
 export const Manager = createContext<ManagerContextType>({
   currentRulings: {},
   previousRulings: {},
   handleVote: () => {},
+  handleRulingExpired: () => {},
 })
 
 export const ManagerProvider = ({ children }: { children: ReactNode }) => {
@@ -106,6 +122,34 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
+  const handleRulingExpired = (
+    id: string,
+    handleGoNext: ({
+      updatedRulings,
+    }: {
+      updatedRulings: Record<string, SingleCelebrity>
+    }) => void,
+  ) => {
+    setCurrentRulings((prevCurrentRulings) => {
+      const { [id]: expiredRuling, ...remainingCurrentRulings } =
+        prevCurrentRulings
+
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      if (!expiredRuling) {
+        return prevCurrentRulings
+      }
+
+      setPreviousRulings((prevPreviousRulings) => ({
+        [id]: expiredRuling,
+        ...prevPreviousRulings,
+      }))
+
+      handleGoNext({ updatedRulings: { ...remainingCurrentRulings } })
+
+      return remainingCurrentRulings
+    })
+  }
+
   useEffect(() => {
     setCurrentRulings({
       [celebrities.data[0].id]: {
@@ -131,7 +175,14 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
   }, [])
 
   return (
-    <Manager.Provider value={{ currentRulings, previousRulings, handleVote }}>
+    <Manager.Provider
+      value={{
+        currentRulings,
+        previousRulings,
+        handleVote,
+        handleRulingExpired,
+      }}
+    >
       {children}
     </Manager.Provider>
   )
