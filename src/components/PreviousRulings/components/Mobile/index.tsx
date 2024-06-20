@@ -1,19 +1,21 @@
-import { type SingleCelebrity } from '@/models'
-import SingleVotingCard from '../SingleVotingCard'
 import './styles.css'
+import { useContext } from 'react'
+import { Manager } from '@/context'
+import SingleVotingCard from '../SingleVotingCard'
 
 interface MobileProps {
   className: string
-  celebrities: SingleCelebrity[]
 }
 
-const Mobile = ({ className, celebrities }: MobileProps) => {
+const Mobile = ({ className }: MobileProps) => {
+  const { previousRulings } = useContext(Manager)
+
   return (
     <main className={`previous-rulings ${className}`} role="main">
       <h2>Previous Rulings</h2>
 
       <div className="previous-rulings__voting-cards">
-        {celebrities.map((singleCeleb) => (
+        {previousRulings.map((singleCeleb) => (
           <SingleVotingCard
             mode="grid"
             dataTestId="single-voting-card"

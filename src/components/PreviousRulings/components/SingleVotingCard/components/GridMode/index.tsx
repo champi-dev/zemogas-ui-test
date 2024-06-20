@@ -24,6 +24,7 @@ const GridMode = ({ dataTestId, celebrity }: GridModeProps) => {
         description={celebrity.description}
         category={celebrity.category}
         createdAt={celebrity.createdAt}
+        votes={celebrity.votes}
       />
 
       <CardBottom dataTestId="card-bottom" votes={celebrity.votes} />

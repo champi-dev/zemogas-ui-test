@@ -1,15 +1,10 @@
 import './styles.css'
-import { type SingleCelebrity } from '@/models'
 import { Mobile, TabletDesktop } from './components'
 
-interface PreviousRulingsProps {
-  celebrities: SingleCelebrity[]
-}
-
-const PreviousRulings = ({ celebrities }: PreviousRulingsProps) => {
+const PreviousRulings = () => {
   return (
     <>
-      <Mobile className="mobile" celebrities={celebrities} />
+      <Mobile className="mobile" />
       <TabletDesktop className="tablet-desktop" />
     </>
   )

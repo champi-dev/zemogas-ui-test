@@ -7,21 +7,21 @@ import {
   Footer,
   PreviousRulings,
 } from './components'
-import celebrities from './mockData/celebrities.json'
+import { ManagerProvider } from './context'
 
 const App = () => {
   return (
-    <>
+    <ManagerProvider>
       <Nav />
       <Header />
       <div className="max-centered">
         <SpeakOut />
-        <PreviousRulings celebrities={celebrities.data} />
+        <PreviousRulings />
         <SubmitAName />
         <hr role="separator"></hr>
         <Footer />
       </div>
-    </>
+    </ManagerProvider>
   )
 }
 

@@ -1,0 +1,48 @@
+.top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.top-actions .img-container {
+  margin: unset;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-actions .img-container img {
+  width: 15px;
+  height: 15px;
+}
+
+.top-actions .img-container {
+  margin: unset;
+  background-color: rgba(60, 187, 180, 0.8);
+}
+
+.top-actions .img-container.active {
+  box-shadow: inset 0 0 0 2px #FFF;
+}
+
+.top-actions .img-container.right {
+  margin: unset;
+  margin-left: 12px;
+  margin-right: 12px;
+  background-color: rgba(251, 189, 74, 1);
+}
+
+.top-actions .vote-btn {
+  color: #FFF;
+  width: 107px;
+  height: 38px;
+  border: 1px solid #FFF;
+  background: rgba(0, 0, 0, 0.60);
+}
+
+.top-actions .vote-btn.active {
+  background: rgba(48, 48, 48, 0.60);
+}
+

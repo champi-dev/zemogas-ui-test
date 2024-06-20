@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import './styles.css'
+import { useState, useContext } from 'react'
+import { Manager } from '@/context'
 import { TopDropdown } from './components'
 import { SingleVotingCard } from '../index'
-import celebrities from '@/mockData/celebrities.json'
 
 interface TabletDesktopProps {
   className: string
@@ -10,6 +10,7 @@ interface TabletDesktopProps {
 
 const TabletDesktop = ({ className }: TabletDesktopProps) => {
   const [selectedMode, setSelectedMode] = useState<'list' | 'grid'>('list')
+  const { previousRulings } = useContext(Manager)
 
   return (
     <main className={className} role="main">
@@ -19,7 +20,7 @@ const TabletDesktop = ({ className }: TabletDesktopProps) => {
       </div>
 
       <div className={`main__rulings ${selectedMode}`}>
-        {celebrities.data.map((singleCeleb) => (
+        {previousRulings.map((singleCeleb) => (
           <div
             key={`${singleCeleb.name}${singleCeleb.description}`}
             className={`card-container ${selectedMode}`}

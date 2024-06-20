@@ -1,7 +1,9 @@
 import './styles.css'
+import { useState } from 'react'
 import { type SingleCelebrity } from '@/models'
 import { CardBottom } from '../index'
 import { timeAgo, truncateString } from '@/utils'
+import { VoteActions, WinnerThumb } from '../../../../../index'
 
 interface ListModeProps {
   dataTestId: string
@@ -9,6 +11,8 @@ interface ListModeProps {
 }
 
 const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
+  const [hasVoted, setHasVoted] = useState(false)
+
   return (
     <div className="list-mode" data-testid={dataTestId}>
       <img
@@ -18,37 +22,31 @@ const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
         data-testid="celebrity-img"
       />
 
-      <div className="list-mode__winner-thumb">
-        <img src="/assets/img/thumbs-down.svg" alt="thumbs up" />
-      </div>
+      <WinnerThumb votes={celebrity.votes} />
 
       <div className="list-mode__content">
         <div className="content-left">
-          <span className="celebrity-name">{celebrity.name}</span>
+          <span className="celebrity-name">
+            {truncateString(celebrity.name, 21)}
+          </span>
           <span className="celebrity-description">
-            {truncateString(celebrity.description)}
+            {truncateString(celebrity.description, 110)}
           </span>
         </div>
 
         <div className="content-right">
           <span className="time-ago">
-            {`${timeAgo(celebrity.createdAt)} in `}
-            <span className="capitalize">{celebrity.category}</span>
+            {hasVoted ? (
+              'Thank you for voting!'
+            ) : (
+              <>
+                {`${timeAgo(celebrity.createdAt)} in `}
+                <span className="capitalize">{celebrity.category}</span>
+              </>
+            )}
           </span>
 
-          <div className="top-actions">
-            <div className="img-container" data-testid="thumbs-up">
-              <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
-            </div>
-
-            <div className="img-container right" data-testid="thumbs-down">
-              <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
-            </div>
-
-            <button className="vote-btn" data-testid="vote-now">
-              Vote Now
-            </button>
-          </div>
+          <VoteActions externalHasVoted={setHasVoted} />
         </div>
       </div>
 

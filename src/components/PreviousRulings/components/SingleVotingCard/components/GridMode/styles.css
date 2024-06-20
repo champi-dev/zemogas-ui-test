@@ -51,33 +51,3 @@
   text-align: right;
   margin-bottom: 12px;
 }
-
-.single-voting-card .top-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.single-voting-card .top-actions .img-container {
-  margin: unset;
-}
-
-.single-voting-card .top-actions .img-container {
-  margin: unset;
-  background-color: rgba(60, 187, 180, 0.8);
-}
-
-.single-voting-card .top-actions .img-container.right {
-  margin: unset;
-  margin-left: 12px;
-  margin-right: 12px;
-  background-color: rgba(251, 189, 74, 1);
-}
-
-.single-voting-card .top-actions .vote-btn {
-  color: #FFF;
-  width: 107px;
-  height: 38px;
-  border: 1px solid #FFF;
-  background: rgba(0, 0, 0, 0.60);
-}
