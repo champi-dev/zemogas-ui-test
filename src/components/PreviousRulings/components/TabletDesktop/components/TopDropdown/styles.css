@@ -12,6 +12,7 @@
 .top-dropdown span {
   margin-left: auto;
   margin-right: auto;
+  text-transform: capitalize;
 }
 
 .top-dropdown ul {

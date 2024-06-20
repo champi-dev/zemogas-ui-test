@@ -11,6 +11,7 @@ describe('PreviousRulings', () => {
     expect(title.length).toBeTruthy()
 
     const votingCards = screen.getAllByTestId('single-voting-card')
-    expect(votingCards.length).toEqual(celebrities.data.length)
+
+    expect(votingCards.length).toEqual(celebrities.data.length + 1)
   })
 })

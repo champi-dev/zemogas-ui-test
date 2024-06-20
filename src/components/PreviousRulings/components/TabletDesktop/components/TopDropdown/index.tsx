@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import './styles.css'
 
-const TopDropdown = () => {
-  const [selected, setSelected] = useState<'List' | 'Grid'>('List')
+interface TopDropdownProps {
+  onSelected: (selected: 'list' | 'grid') => void
+}
+
+const TopDropdown = ({ onSelected }: TopDropdownProps) => {
+  const [selected, setSelected] = useState<'list' | 'grid'>('list')
   const [isOpen, setIsOpen] = useState(false)
 
-  const onOptionClicked = (option: 'List' | 'Grid') => {
+  const onOptionClicked = (option: 'list' | 'grid') => {
     setSelected(option)
+    onSelected(option)
     setIsOpen(false)
   }
 
@@ -34,7 +39,7 @@ const TopDropdown = () => {
             <li
               onClick={(e) => {
                 e.stopPropagation()
-                onOptionClicked('List')
+                onOptionClicked('list')
               }}
             >
               List
@@ -42,7 +47,7 @@ const TopDropdown = () => {
             <li
               onClick={(e) => {
                 e.stopPropagation()
-                onOptionClicked('Grid')
+                onOptionClicked('grid')
               }}
             >
               Grid

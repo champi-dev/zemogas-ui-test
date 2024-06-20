@@ -7,6 +7,7 @@ describe('SingleVotingCard', () => {
   it('renders', () => {
     render(
       <SingleVotingCard
+        mode="grid"
         dataTestId="single-voting-card"
         celebrity={celebrities.data[0]}
       />,

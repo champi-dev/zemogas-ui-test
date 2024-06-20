@@ -15,6 +15,7 @@ const Mobile = ({ className, celebrities }: MobileProps) => {
       <div className="previous-rulings__voting-cards">
         {celebrities.map((singleCeleb) => (
           <SingleVotingCard
+            mode="grid"
             dataTestId="single-voting-card"
             key={`${singleCeleb.name}${singleCeleb.description}`}
             celebrity={singleCeleb}
