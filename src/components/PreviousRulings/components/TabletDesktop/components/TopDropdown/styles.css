@@ -1,0 +1,13 @@
+.top-dropdown {
+  width: 131px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+.top-dropdown span {
+  margin-left: auto;
+  margin-right: auto;
+}

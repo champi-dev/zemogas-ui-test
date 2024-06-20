@@ -1,0 +1,21 @@
+.previous-rulings {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+}
+
+.previous-rulings .previous-rulings__voting-cards {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.previous-rulings .previous-rulings__voting-cards::-webkit-scrollbar {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .previous-rulings {
+    display: none;
+  }
+}
