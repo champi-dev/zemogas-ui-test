@@ -21,7 +21,7 @@
 6. [x] Format time in SingleVotingCard
 7. [x] Format category in SingleVotingCard
 8. [x] Initial unit tests
-9. [] Config test coverage reporter html
+9. [x] Config test coverage reporter html
 10. [] Adjust responsive design
 
 ### Task 3:
