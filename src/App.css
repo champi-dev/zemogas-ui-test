@@ -446,21 +446,6 @@ main h2 {
   .closing-gauge__left:after {
       border-top-width: 0.33rem;
       border-bottom-width: 0.33rem;
-  } 
-
-  .banner-top .banner__text,
-  .banner-top .banner__left > .banner__hairline {
-      font-size: 1rem;
-  }
-
-  .banner-top .banner__left > .banner__title {
-      font-size: 1.5rem;
-      letter-spacing: 0;
-  }
-
-  .banner-top .icon-button {
-      display: block;
-      margin-left: 2rem;
   }
 
   .banner-bottom .banner__cta {
