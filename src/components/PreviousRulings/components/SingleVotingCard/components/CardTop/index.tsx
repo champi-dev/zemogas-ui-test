@@ -1,5 +1,6 @@
 import './styles.css'
 import { truncateString, timeAgo } from '@/utils'
+import { VoteActions } from '../../../../../index'
 
 interface CardTopProps {
   dataTestId: string
@@ -25,27 +26,13 @@ const CardTop = ({
 
         <span>{name}</span>
       </div>
-
       <span className="top-subtitle">{truncateString(description)}</span>
-
       <span className="top-legend">
         {`${timeAgo(createdAt)} in `}
         <span className="capitalize">{category}</span>
       </span>
 
-      <div className="top-actions">
-        <div className="img-container" data-testid="thumbs-up">
-          <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
-        </div>
-
-        <div className="img-container right" data-testid="thumbs-down">
-          <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
-        </div>
-
-        <button className="vote-btn" data-testid="vote-now">
-          Vote Now
-        </button>
-      </div>
+      <VoteActions />
     </div>
   )
 }

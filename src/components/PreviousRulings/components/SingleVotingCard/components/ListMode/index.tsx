@@ -2,6 +2,7 @@ import './styles.css'
 import { type SingleCelebrity } from '@/models'
 import { CardBottom } from '../index'
 import { timeAgo, truncateString } from '@/utils'
+import { VoteActions } from '../../../../../index'
 
 interface ListModeProps {
   dataTestId: string
@@ -36,19 +37,7 @@ const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
             <span className="capitalize">{celebrity.category}</span>
           </span>
 
-          <div className="top-actions">
-            <div className="img-container" data-testid="thumbs-up">
-              <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
-            </div>
-
-            <div className="img-container right" data-testid="thumbs-down">
-              <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
-            </div>
-
-            <button className="vote-btn" data-testid="vote-now">
-              Vote Now
-            </button>
-          </div>
+          <VoteActions />
         </div>
       </div>
 

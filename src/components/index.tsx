@@ -4,4 +4,13 @@ import SpeakOut from './SpeakOut'
 import SubmitAName from './SubmitAName'
 import Footer from './Footer'
 import PreviousRulings from './PreviousRulings'
-export { Nav, Header, SpeakOut, SubmitAName, Footer, PreviousRulings }
+import VoteActions from './VoteActions'
+export {
+  Nav,
+  Header,
+  SpeakOut,
+  SubmitAName,
+  Footer,
+  PreviousRulings,
+  VoteActions,
+}
