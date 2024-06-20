@@ -11,10 +11,10 @@ describe('CardBottom', () => {
       />,
     )
 
-    const positivePer = screen.getByText('69%')
+    const positivePer = screen.getByText('69.44%')
     expect(positivePer).toBeInTheDocument()
 
-    const negative = screen.getByText('31%')
+    const negative = screen.getByText('30.56%')
     expect(negative).toBeInTheDocument()
   })
 })

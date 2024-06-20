@@ -15,7 +15,7 @@ const Mobile = ({ className }: MobileProps) => {
       <h2>Previous Rulings</h2>
 
       <div className="previous-rulings__voting-cards">
-        {previousRulings.map((singleCeleb) => (
+        {Object.values(previousRulings).map((singleCeleb) => (
           <SingleVotingCard
             mode="grid"
             dataTestId="single-voting-card"

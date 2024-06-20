@@ -1,4 +1,5 @@
 import './styles.css'
+import { useMemo } from 'react'
 
 interface CardBottomProps {
   dataTestId: string
@@ -9,9 +10,15 @@ interface CardBottomProps {
 }
 
 const CardBottom = ({ dataTestId, votes }: CardBottomProps) => {
-  const totalVotes = votes.positive + votes.negative
-  const positivePercentage = Math.round((votes.positive / totalVotes) * 100)
-  const negativePercentage = Math.round((votes.negative / totalVotes) * 100)
+  const totalVotes = useMemo(() => votes.positive + votes.negative, [votes])
+  const positivePercentage = useMemo(
+    () => Math.round((votes.positive / totalVotes) * 10000) / 100,
+    [votes, totalVotes],
+  )
+  const negativePercentage = useMemo(
+    () => Math.round((votes.negative / totalVotes) * 10000) / 100,
+    [votes, totalVotes],
+  )
 
   return (
     <div className="single-voting-card__bottom" data-testid={dataTestId}>

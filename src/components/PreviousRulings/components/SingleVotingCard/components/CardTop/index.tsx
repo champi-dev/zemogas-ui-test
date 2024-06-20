@@ -5,6 +5,7 @@ import { VoteActions, WinnerThumb } from '../../../../../index'
 
 interface CardTopProps {
   dataTestId: string
+  id: string
   name: string
   description: string
   category: string
@@ -17,6 +18,7 @@ interface CardTopProps {
 
 const CardTop = ({
   dataTestId,
+  id,
   name,
   description,
   category,
@@ -44,7 +46,11 @@ const CardTop = ({
         )}
       </span>
 
-      <VoteActions externalHasVoted={setHasVoted} />
+      <VoteActions
+        id={id}
+        rulingType="previous"
+        externalHasVoted={setHasVoted}
+      />
     </div>
   )
 }
