@@ -1,12 +1,12 @@
 import './styles.css'
 import { type SingleCelebrity } from '@/models'
+import { CardBottom } from '../index'
 
 interface ListModeProps {
   dataTestId: string
   celebrity: SingleCelebrity
 }
 
-// add gauge bar bottom
 const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
   return (
     <div className="list-mode" data-testid={dataTestId}>
@@ -20,6 +20,8 @@ const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
       <div className="list-mode__winner-thumb">
         <img src="/assets/img/thumbs-down.svg" alt="thumbs up" />
       </div>
+
+      <CardBottom dataTestId="gauge-bar" votes={celebrity.votes} />
     </div>
   )
 }
