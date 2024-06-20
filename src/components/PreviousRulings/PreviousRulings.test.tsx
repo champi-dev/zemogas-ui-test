@@ -7,8 +7,8 @@ describe('PreviousRulings', () => {
   it('renders', () => {
     render(<PreviousRulings celebrities={celebrities.data} />)
 
-    const title = screen.getByText('Previous Rulings')
-    expect(title).toBeInTheDocument()
+    const title = screen.getAllByText('Previous Rulings')
+    expect(title.length).toBeTruthy()
 
     const votingCards = screen.getAllByTestId('single-voting-card')
     expect(votingCards.length).toEqual(celebrities.data.length)
