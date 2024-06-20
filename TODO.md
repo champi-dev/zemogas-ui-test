@@ -22,7 +22,7 @@
 7. [x] Format category in SingleVotingCard
 8. [x] Initial unit tests
 9. [x] Config test coverage reporter html
-10. [] Adjust responsive design
+10. [x] Adjust responsive design
 
 ### Task 3:
 1. [] Add UI logic with mocks

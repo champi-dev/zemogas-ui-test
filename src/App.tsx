@@ -11,7 +11,7 @@ import celebrities from './mockData/celebrities.json'
 
 const App = () => {
   return (
-    <body>
+    <>
       <Nav />
       <Header />
       <div className="max-centered">
@@ -21,7 +21,7 @@ const App = () => {
         <hr role="separator"></hr>
         <Footer />
       </div>
-    </body>
+    </>
   )
 }
 
