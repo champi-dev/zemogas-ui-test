@@ -1,11 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import celebrities from '@/mockData/celebrities.json'
 import PreviousRulings from './index'
+import { ManagerProvider } from '@/context'
 
 describe('PreviousRulings', () => {
   it('renders', () => {
-    render(<PreviousRulings celebrities={celebrities.data} />)
+    render(
+      <ManagerProvider>
+        <PreviousRulings />
+      </ManagerProvider>,
+    )
 
     const title = screen.getAllByText('Previous Rulings')
     expect(title.length).toBeTruthy()

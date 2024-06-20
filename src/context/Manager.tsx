@@ -13,10 +13,10 @@ export const Manager = createContext<ManagerContextType>({
 })
 
 export const ManagerProvider = ({ children }: { children: ReactNode }) => {
-  const [currentRulings, setCurrentRulings] = useState<SingleCelebrity[]>(
+  const [currentRulings] = useState<SingleCelebrity[]>(
     celebrities.data.slice(0, 2),
   )
-  const [previousRulings, setPreviousRulings] = useState<SingleCelebrity[]>(
+  const [previousRulings] = useState<SingleCelebrity[]>(
     celebrities.data.slice(2, celebrities.data.length),
   )
 
