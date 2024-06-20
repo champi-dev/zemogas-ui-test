@@ -1,4 +1,5 @@
 import './styles.css'
+import { useState } from 'react'
 import { type SingleCelebrity } from '@/models'
 import { CardBottom } from '../index'
 import { timeAgo, truncateString } from '@/utils'
@@ -10,6 +11,8 @@ interface ListModeProps {
 }
 
 const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
+  const [hasVoted, setHasVoted] = useState(false)
+
   return (
     <div className="list-mode" data-testid={dataTestId}>
       <img
@@ -33,11 +36,17 @@ const ListMode = ({ dataTestId, celebrity }: ListModeProps) => {
 
         <div className="content-right">
           <span className="time-ago">
-            {`${timeAgo(celebrity.createdAt)} in `}
-            <span className="capitalize">{celebrity.category}</span>
+            {hasVoted ? (
+              'Thank you for voting!'
+            ) : (
+              <>
+                {`${timeAgo(celebrity.createdAt)} in `}
+                <span className="capitalize">{celebrity.category}</span>
+              </>
+            )}
           </span>
 
-          <VoteActions />
+          <VoteActions externalHasVoted={setHasVoted} />
         </div>
       </div>
 

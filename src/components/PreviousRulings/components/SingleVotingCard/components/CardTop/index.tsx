@@ -1,4 +1,5 @@
 import './styles.css'
+import { useState } from 'react'
 import { truncateString, timeAgo } from '@/utils'
 import { VoteActions } from '../../../../../index'
 
@@ -17,6 +18,8 @@ const CardTop = ({
   category,
   createdAt,
 }: CardTopProps) => {
+  const [hasVoted, setHasVoted] = useState(false)
+
   return (
     <div className="single-voting-card__top" data-testid={dataTestId}>
       <div className="top-title">
@@ -28,11 +31,17 @@ const CardTop = ({
       </div>
       <span className="top-subtitle">{truncateString(description)}</span>
       <span className="top-legend">
-        {`${timeAgo(createdAt)} in `}
-        <span className="capitalize">{category}</span>
+        {hasVoted ? (
+          'Thank you for voting!'
+        ) : (
+          <>
+            {`${timeAgo(createdAt)} in `}
+            <span className="capitalize">{category}</span>
+          </>
+        )}
       </span>
 
-      <VoteActions />
+      <VoteActions externalHasVoted={setHasVoted} />
     </div>
   )
 }

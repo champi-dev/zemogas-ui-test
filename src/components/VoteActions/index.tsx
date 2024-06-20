@@ -1,7 +1,11 @@
 import './style.css'
 import { useState, useEffect } from 'react'
 
-const VoteActions = () => {
+interface VoteActionsProps {
+  externalHasVoted: (hasVoted: boolean) => void
+}
+
+const VoteActions = ({ externalHasVoted }: VoteActionsProps) => {
   const [hasVoted, setHasVoted] = useState(false)
   const [optionSelected, setOptionSelected] = useState<
     'up' | 'down' | undefined
@@ -13,10 +17,12 @@ const VoteActions = () => {
   const canVote = optionSelected === 'up' || optionSelected === 'down'
 
   useEffect(() => {
+    externalHasVoted(hasVoted)
+
     if (hasVoted) {
       setOptionSelected(undefined)
     }
-  }, [hasVoted])
+  }, [externalHasVoted, hasVoted])
 
   return (
     <div className="top-actions">
