@@ -3,12 +3,13 @@ import { CardTop, CardBottom } from './components'
 import { type SingleCelebrity } from '@/models'
 
 interface SingleVotingCardProps {
+  dataTestId: string
   celebrity: SingleCelebrity
 }
-// add data-testids
-const SingleVotingCard = ({ celebrity }: SingleVotingCardProps) => {
+
+const SingleVotingCard = ({ dataTestId, celebrity }: SingleVotingCardProps) => {
   return (
-    <div className="single-voting-card">
+    <div className="single-voting-card" data-testid={dataTestId}>
       <img
         src={celebrity.picture}
         alt={celebrity.name}

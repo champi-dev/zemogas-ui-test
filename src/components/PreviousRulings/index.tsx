@@ -14,6 +14,7 @@ const PreviousRulings = ({ celebrities }: PreviousRulingsProps) => {
       <div className="previous-rulings__voting-cards">
         {celebrities.map((singleCeleb) => (
           <SingleVotingCard
+            dataTestId="single-voting-card"
             key={`${singleCeleb.name}${singleCeleb.description}`}
             celebrity={singleCeleb}
           />
