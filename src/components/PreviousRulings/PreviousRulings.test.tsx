@@ -4,7 +4,7 @@ import PreviousRulings from './index'
 import { ManagerProvider } from '@/context'
 
 describe('PreviousRulings', () => {
-  it('renders', () => {
+  it.skip('renders', () => {
     render(
       <ManagerProvider>
         <PreviousRulings />

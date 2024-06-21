@@ -1,17 +1,13 @@
-/* 
-  [TODO]:
-  - check currentRulings every minute to see if it already expired
-    - if expired
-      - remove it from currentRulings and add it first inside previousRulings
-*/
-
 import { type ReactNode, createContext, useState, useEffect } from 'react'
 import { type SingleCelebrity } from '@/models'
-import celebrities from '@/mockData/celebrities.json'
+import { fetchCelebrities, updateCelebrity } from '@/firebase'
+import { isExpired } from '@/utils'
 
 interface ManagerContextType {
   currentRulings: Record<string, SingleCelebrity>
   previousRulings: Record<string, SingleCelebrity>
+  lastKey: string
+  loadMoreCelebrities: (lastKey: string) => void
   handleVote: ({
     id,
     vote,
@@ -34,6 +30,8 @@ interface ManagerContextType {
 export const Manager = createContext<ManagerContextType>({
   currentRulings: {},
   previousRulings: {},
+  lastKey: '',
+  loadMoreCelebrities: () => {},
   handleVote: () => {},
   handleRulingExpired: () => {},
 })
@@ -45,6 +43,7 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
   const [previousRulings, setPreviousRulings] = useState<
     Record<string, SingleCelebrity>
   >({})
+  const [lastKey, setLastKey] = useState('')
 
   const handleCurrentVote = ({
     vote,
@@ -57,20 +56,23 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     const canUpdate = Boolean(currentRulings[id])
 
     if (canUpdate) {
-      currentRulingsToSet[id] = {
-        ...currentRulingsToSet[id],
-        votes: {
-          positive:
-            vote === 'positive'
-              ? currentRulingsToSet[id].votes.positive + 1
-              : currentRulingsToSet[id].votes.positive,
-          negative:
-            vote === 'negative'
-              ? currentRulingsToSet[id].votes.negative + 1
-              : currentRulingsToSet[id].votes.negative,
-        },
+      const votes = {
+        positive:
+          vote === 'positive'
+            ? currentRulingsToSet[id].votes.positive + 1
+            : currentRulingsToSet[id].votes.positive,
+        negative:
+          vote === 'negative'
+            ? currentRulingsToSet[id].votes.negative + 1
+            : currentRulingsToSet[id].votes.negative,
       }
 
+      currentRulingsToSet[id] = {
+        ...currentRulingsToSet[id],
+        votes,
+      }
+
+      void updateCelebrity(id, { votes })
       setCurrentRulings(currentRulingsToSet)
     }
   }
@@ -86,20 +88,23 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     const canUpdate = Boolean(previousRulings[id])
 
     if (canUpdate) {
-      previousRulingsToSet[id] = {
-        ...previousRulingsToSet[id],
-        votes: {
-          positive:
-            vote === 'positive'
-              ? previousRulingsToSet[id].votes.positive + 1
-              : previousRulingsToSet[id].votes.positive,
-          negative:
-            vote === 'negative'
-              ? previousRulingsToSet[id].votes.negative + 1
-              : previousRulingsToSet[id].votes.negative,
-        },
+      const votes = {
+        positive:
+          vote === 'positive'
+            ? previousRulingsToSet[id].votes.positive + 1
+            : previousRulingsToSet[id].votes.positive,
+        negative:
+          vote === 'negative'
+            ? previousRulingsToSet[id].votes.negative + 1
+            : previousRulingsToSet[id].votes.negative,
       }
 
+      previousRulingsToSet[id] = {
+        ...previousRulingsToSet[id],
+        votes,
+      }
+
+      void updateCelebrity(id, { votes })
       setPreviousRulings(previousRulingsToSet)
     }
   }
@@ -150,28 +155,33 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     })
   }
 
-  useEffect(() => {
-    setCurrentRulings({
-      [celebrities.data[0].id]: {
-        ...celebrities.data[0],
-      },
-      [celebrities.data[1].id]: {
-        ...celebrities.data[1],
-      },
-    })
-  }, [])
+  const loadCelebrities = async (key: string | null) => {
+    const result = await fetchCelebrities(key)
+    if (!result.error) {
+      result.data.forEach((singleCeleb: SingleCelebrity) => {
+        if (isExpired(singleCeleb)) {
+          setPreviousRulings((prev) => ({
+            ...prev,
+            [singleCeleb.id]: { ...singleCeleb },
+          }))
+        } else {
+          setCurrentRulings((prev) => ({
+            ...prev,
+            [singleCeleb.id]: { ...singleCeleb },
+          }))
+        }
+      })
+
+      setLastKey(result.lastKey!)
+    }
+  }
+
+  const loadMoreCelebrities = (lastKey: string) => {
+    void loadCelebrities(lastKey)
+  }
 
   useEffect(() => {
-    const prevRulingsToSet: Record<string, SingleCelebrity> = {}
-    const celebsForPreviousRulings = celebrities.data.slice(
-      2,
-      celebrities.data.length,
-    )
-
-    celebsForPreviousRulings.forEach((singleCeleb) => {
-      prevRulingsToSet[singleCeleb.id] = { ...singleCeleb }
-    })
-    setPreviousRulings(prevRulingsToSet)
+    void loadCelebrities(null)
   }, [])
 
   return (
@@ -181,6 +191,8 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
         previousRulings,
         handleVote,
         handleRulingExpired,
+        lastKey,
+        loadMoreCelebrities,
       }}
     >
       {children}
