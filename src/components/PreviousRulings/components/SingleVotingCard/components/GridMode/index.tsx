@@ -5,9 +5,10 @@ import { type SingleCelebrity } from '@/models'
 interface GridModeProps {
   dataTestId: string
   celebrity: SingleCelebrity
+  rulingType?: 'current' | 'previous'
 }
 
-const GridMode = ({ dataTestId, celebrity }: GridModeProps) => {
+const GridMode = ({ dataTestId, celebrity, rulingType }: GridModeProps) => {
   return (
     <div className="single-voting-card" data-testid={dataTestId}>
       <img
@@ -26,6 +27,7 @@ const GridMode = ({ dataTestId, celebrity }: GridModeProps) => {
         category={celebrity.category}
         createdAt={celebrity.createdAt}
         votes={celebrity.votes}
+        rulingType={rulingType}
       />
 
       <CardBottom dataTestId="card-bottom" votes={celebrity.votes} />

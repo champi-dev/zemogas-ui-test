@@ -25,21 +25,15 @@ const Nav = () => {
             <Link to="how-it-works">How It Works</Link>
           </li>
           <li>
-            <form>
-              <input
-                className="nav__search-input"
-                aria-label="search"
-                type="text"
-                data-testid="search-input"
-              />
-              <button
-                className="nav__search icon-button"
-                type="submit"
-                data-testid="submit-btn"
-              >
+            <button
+              className="nav__search icon-button"
+              type="submit"
+              data-testid="submit-btn"
+            >
+              <Link to="search">
                 <img src="/assets/img/search.svg" alt="search" />
-              </button>
-            </form>
+              </Link>
+            </button>
           </li>
         </ul>
       </div>

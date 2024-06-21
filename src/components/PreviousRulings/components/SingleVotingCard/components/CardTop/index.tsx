@@ -10,6 +10,7 @@ interface CardTopProps {
   description: string
   category: string
   createdAt: string
+  rulingType?: 'current' | 'previous'
   votes: {
     positive: number
     negative: number
@@ -24,6 +25,7 @@ const CardTop = ({
   category,
   createdAt,
   votes,
+  rulingType,
 }: CardTopProps) => {
   const [hasVoted, setHasVoted] = useState(false)
 
@@ -48,7 +50,7 @@ const CardTop = ({
 
       <VoteActions
         id={id}
-        rulingType="previous"
+        rulingType={rulingType ?? 'previous'}
         externalHasVoted={setHasVoted}
       />
     </div>

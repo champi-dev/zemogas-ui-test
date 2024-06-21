@@ -11,3 +11,9 @@
 .how-it-works  h1 {
   margin-top: unset;
  }
+
+ @media (min-width: 1100px) {
+  .how-it-works {
+    padding-top: 200px;
+  }
+}
