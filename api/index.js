@@ -16,18 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 export const database = getDatabase(app)
 
-/* fastify.get('/api/celebrity/:name', async (request, reply) => {
-  const { name } = request.params
-
-  try {
-    const { bio, category } = await scrapeGoogle(name)
-    reply.send({ name, bio, category })
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    reply.code(500).send({ error: 'Error fetching data' })
-  }
-}) */
-
 const start = async () => {
   try {
     await fastify.listen({ port: 3000 })
