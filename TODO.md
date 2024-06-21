@@ -32,6 +32,7 @@
 5. [x] Add ui logic to SubmitAName
 6. [x] Add past trials route
 7. [x] Add how it works route
-8. [] Add search route
-9. [] Add ui logic to nav (active link)
-10. [] Update unit tests
+8. [x] Add search route
+
+### Task 4:
+1. [] Add firebase logic

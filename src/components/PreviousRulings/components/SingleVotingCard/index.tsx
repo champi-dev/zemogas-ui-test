@@ -6,15 +6,21 @@ interface SingleVotingCardProps {
   mode: 'list' | 'grid'
   dataTestId: string
   celebrity: SingleCelebrity
+  rulingType?: 'current' | 'previous'
 }
 
 const SingleVotingCard = ({
   mode,
   dataTestId,
   celebrity,
+  rulingType,
 }: SingleVotingCardProps) => {
   return mode === 'grid' ? (
-    <GridMode dataTestId={dataTestId} celebrity={celebrity} />
+    <GridMode
+      dataTestId={dataTestId}
+      celebrity={celebrity}
+      rulingType={rulingType}
+    />
   ) : (
     <ListMode dataTestId={dataTestId} celebrity={celebrity} />
   )
