@@ -36,7 +36,7 @@
 
 ### Task 4:
 1. [x] Add endpoint for getting new rulings
-2. [] Save those new rulings to firebase
-3. [] Get rulings from firebase
+2. [x] Save those new rulings to firebase
+3. [x] Get rulings from firebase
 4. [] Manage ended rulings
 5. [] Manage realtime

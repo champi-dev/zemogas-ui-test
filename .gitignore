@@ -25,4 +25,5 @@ dist-ssr
 
 coverage
 
+.env
 api/.env

@@ -23,3 +23,18 @@ export const levenshtein = (a, b) => {
 
   return matrix[b.length][a.length]
 }
+
+export const generateRandomSeconds = () => {
+  const minSeconds = 60
+  const maxSeconds = 5 * 24 * 60 * 60
+  const randomSeconds =
+    Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds
+  return randomSeconds
+}
+
+export const generateRandomNumber = () => {
+  const min = 1
+  const max = 10
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
+  return randomNumber
+}

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { scrapeGoogle } from './index.js'
 import { checkCelebrities, saveCelebrity } from '../firebase/index.js'
+import { generateRandomSeconds, generateRandomNumber } from '../utils/index.js'
 
 export const initialCheck = async () => {
   try {
@@ -32,11 +33,11 @@ const getCelebritiesInfo = async () => {
         description: celebrityInfo.bio,
         category: celebrityInfo.category,
         picture: celebrityImageUrl,
-        createdAt: new Date(),
-        expiresInSeconds: 360000,
+        createdAt: new Date().toISOString(),
+        expiresInSeconds: generateRandomSeconds(),
         votes: {
-          positive: 0,
-          negative: 0
+          positive: generateRandomNumber(),
+          negative: generateRandomNumber()
         }
       })
     } catch (scrapeError) {

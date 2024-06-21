@@ -3,19 +3,13 @@ import { useState, useContext, useEffect } from 'react'
 import { Manager } from '@/context'
 import { SingleVotingCard } from '@/components/PreviousRulings/components'
 import { type SingleCelebrity } from '@/models'
+import { isExpired } from '@/utils'
 
 const Search = () => {
   const { currentRulings, previousRulings } = useContext(Manager)
   const [searchText, setSearchText] = useState('')
   const [allRulings, setAllRulings] = useState<SingleCelebrity[]>([])
   const [filteredRulings, setFilteredRulings] = useState<SingleCelebrity[]>([])
-
-  const isExpired = (singleCeleb: SingleCelebrity) => {
-    const now = Date.now()
-    const createdAt = new Date(singleCeleb.createdAt).getTime()
-    const expiresAt = createdAt + singleCeleb.expiresInSeconds * 1000
-    return now > expiresAt
-  }
 
   useEffect(() => {
     const current = Object.values(currentRulings)

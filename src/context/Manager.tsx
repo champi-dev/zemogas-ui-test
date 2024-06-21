@@ -7,11 +7,14 @@
 
 import { type ReactNode, createContext, useState, useEffect } from 'react'
 import { type SingleCelebrity } from '@/models'
-import celebrities from '@/mockData/celebrities.json'
+import { fetchCelebrities } from '@/firebase'
+import { isExpired } from '@/utils'
 
 interface ManagerContextType {
   currentRulings: Record<string, SingleCelebrity>
   previousRulings: Record<string, SingleCelebrity>
+  lastKey: string
+  loadMoreCelebrities: (lastKey: string) => void
   handleVote: ({
     id,
     vote,
@@ -34,6 +37,8 @@ interface ManagerContextType {
 export const Manager = createContext<ManagerContextType>({
   currentRulings: {},
   previousRulings: {},
+  lastKey: '',
+  loadMoreCelebrities: () => {},
   handleVote: () => {},
   handleRulingExpired: () => {},
 })
@@ -45,6 +50,7 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
   const [previousRulings, setPreviousRulings] = useState<
     Record<string, SingleCelebrity>
   >({})
+  const [lastKey, setLastKey] = useState('')
 
   const handleCurrentVote = ({
     vote,
@@ -150,28 +156,33 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     })
   }
 
-  useEffect(() => {
-    setCurrentRulings({
-      [celebrities.data[0].id]: {
-        ...celebrities.data[0],
-      },
-      [celebrities.data[1].id]: {
-        ...celebrities.data[1],
-      },
-    })
-  }, [])
+  const loadCelebrities = async (key: string | null) => {
+    const result = await fetchCelebrities(key)
+    if (!result.error) {
+      result.data.forEach((singleCeleb: SingleCelebrity) => {
+        if (isExpired(singleCeleb)) {
+          setPreviousRulings((prev) => ({
+            ...prev,
+            [singleCeleb.id]: { ...singleCeleb },
+          }))
+        } else {
+          setCurrentRulings((prev) => ({
+            ...prev,
+            [singleCeleb.id]: { ...singleCeleb },
+          }))
+        }
+      })
+
+      setLastKey(result.lastKey!)
+    }
+  }
+
+  const loadMoreCelebrities = (lastKey: string) => {
+    void loadCelebrities(lastKey)
+  }
 
   useEffect(() => {
-    const prevRulingsToSet: Record<string, SingleCelebrity> = {}
-    const celebsForPreviousRulings = celebrities.data.slice(
-      2,
-      celebrities.data.length,
-    )
-
-    celebsForPreviousRulings.forEach((singleCeleb) => {
-      prevRulingsToSet[singleCeleb.id] = { ...singleCeleb }
-    })
-    setPreviousRulings(prevRulingsToSet)
+    void loadCelebrities(null)
   }, [])
 
   return (
@@ -181,6 +192,8 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
         previousRulings,
         handleVote,
         handleRulingExpired,
+        lastKey,
+        loadMoreCelebrities,
       }}
     >
       {children}
