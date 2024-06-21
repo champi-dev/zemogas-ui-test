@@ -39,4 +39,4 @@
 2. [x] Save those new rulings to firebase
 3. [x] Get rulings from firebase
 4. [x] Manage votes
-5. [] Manage realtime
+5. [x] Manage load more

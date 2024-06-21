@@ -184,6 +184,17 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     void loadCelebrities(null)
   }, [])
 
+  useEffect(() => {
+    void loadCelebrities(null)
+
+    const intervalId = setInterval(() => {
+      loadMoreCelebrities(lastKey)
+    }, 10000)
+
+    return () => clearInterval(intervalId)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastKey])
+
   return (
     <Manager.Provider
       value={{
