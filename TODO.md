@@ -40,3 +40,6 @@
 3. [x] Get rulings from firebase
 4. [x] Manage votes
 5. [x] Manage load more
+
+### Task 5:
+1. [x] Write basic documentation
