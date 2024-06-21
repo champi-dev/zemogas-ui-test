@@ -35,4 +35,8 @@
 8. [x] Add search route
 
 ### Task 4:
-1. [] Add firebase logic
+1. [] Add endpoint for getting new rulings
+2. [] Save those new rulings to firebase
+3. [] Get rulings from firebase
+4. [] Manage ended rulings
+5. [] Manage realtime
