@@ -13,8 +13,26 @@
   text-align: center;
 }
 
+.banner-bottom .banner__heading.submitted {
+  margin: unset;
+}
+
 .banner-bottom .banner__right {
+  position: relative;
   width: 100%;
+}
+
+.banner-bottom .banner__right input {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+}
+
+.banner-bottom .banner__right button.send-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .banner-bottom .banner__cta {
