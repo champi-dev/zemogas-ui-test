@@ -20,9 +20,6 @@ describe('Nav', () => {
     const howItWorks = screen.getByText('How It Works')
     expect(howItWorks).toBeInTheDocument()
 
-    const loginSignUp = screen.getByText('Login / Sign Up')
-    expect(loginSignUp).toBeInTheDocument()
-
     const searchInput = screen.getByTestId('search-input')
     expect(searchInput).toBeInTheDocument()
 

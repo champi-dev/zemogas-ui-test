@@ -2,7 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { Nav, Footer } from './components'
 import { ManagerProvider } from './context'
-import { Home, PastTrials } from './pages'
+import { Home, PastTrials, HowItWorks } from './pages'
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="past-trials" element={<PastTrials />} />
+        <Route path="how-it-works" element={<HowItWorks />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
