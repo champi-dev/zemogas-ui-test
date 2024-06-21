@@ -38,5 +38,5 @@
 1. [x] Add endpoint for getting new rulings
 2. [x] Save those new rulings to firebase
 3. [x] Get rulings from firebase
-4. [] Manage ended rulings
+4. [x] Manage votes
 5. [] Manage realtime

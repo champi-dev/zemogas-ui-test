@@ -1,13 +1,6 @@
-/* 
-  [TODO]:
-  - check currentRulings every minute to see if it already expired
-    - if expired
-      - remove it from currentRulings and add it first inside previousRulings
-*/
-
 import { type ReactNode, createContext, useState, useEffect } from 'react'
 import { type SingleCelebrity } from '@/models'
-import { fetchCelebrities } from '@/firebase'
+import { fetchCelebrities, updateCelebrity } from '@/firebase'
 import { isExpired } from '@/utils'
 
 interface ManagerContextType {
@@ -63,20 +56,23 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     const canUpdate = Boolean(currentRulings[id])
 
     if (canUpdate) {
-      currentRulingsToSet[id] = {
-        ...currentRulingsToSet[id],
-        votes: {
-          positive:
-            vote === 'positive'
-              ? currentRulingsToSet[id].votes.positive + 1
-              : currentRulingsToSet[id].votes.positive,
-          negative:
-            vote === 'negative'
-              ? currentRulingsToSet[id].votes.negative + 1
-              : currentRulingsToSet[id].votes.negative,
-        },
+      const votes = {
+        positive:
+          vote === 'positive'
+            ? currentRulingsToSet[id].votes.positive + 1
+            : currentRulingsToSet[id].votes.positive,
+        negative:
+          vote === 'negative'
+            ? currentRulingsToSet[id].votes.negative + 1
+            : currentRulingsToSet[id].votes.negative,
       }
 
+      currentRulingsToSet[id] = {
+        ...currentRulingsToSet[id],
+        votes,
+      }
+
+      void updateCelebrity(id, { votes })
       setCurrentRulings(currentRulingsToSet)
     }
   }
@@ -92,20 +88,23 @@ export const ManagerProvider = ({ children }: { children: ReactNode }) => {
     const canUpdate = Boolean(previousRulings[id])
 
     if (canUpdate) {
-      previousRulingsToSet[id] = {
-        ...previousRulingsToSet[id],
-        votes: {
-          positive:
-            vote === 'positive'
-              ? previousRulingsToSet[id].votes.positive + 1
-              : previousRulingsToSet[id].votes.positive,
-          negative:
-            vote === 'negative'
-              ? previousRulingsToSet[id].votes.negative + 1
-              : previousRulingsToSet[id].votes.negative,
-        },
+      const votes = {
+        positive:
+          vote === 'positive'
+            ? previousRulingsToSet[id].votes.positive + 1
+            : previousRulingsToSet[id].votes.positive,
+        negative:
+          vote === 'negative'
+            ? previousRulingsToSet[id].votes.negative + 1
+            : previousRulingsToSet[id].votes.negative,
       }
 
+      previousRulingsToSet[id] = {
+        ...previousRulingsToSet[id],
+        votes,
+      }
+
+      void updateCelebrity(id, { votes })
       setPreviousRulings(previousRulingsToSet)
     }
   }
