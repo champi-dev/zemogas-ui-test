@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +16,13 @@
     "dotenv": "^16.4.5",
     "fastest-levenshtein": "^1.0.16",
     "fastify": "^4.28.0",
+    "firebase": "^10.12.2",
     "puppeteer": "^22.11.2",
     "twitter-api-v2": "^1.17.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "globals": "^15.6.0"
   }
 }
