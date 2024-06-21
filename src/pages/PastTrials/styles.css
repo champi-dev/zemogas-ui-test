@@ -1,0 +1,6 @@
+.past-trials {
+  width: 100%;
+  min-height: calc(100vh - 126px);
+  padding: 24px;
+  padding-top: 120px;
+}

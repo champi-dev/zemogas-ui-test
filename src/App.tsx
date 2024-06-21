@@ -1,26 +1,19 @@
 import './App.css'
-import {
-  Nav,
-  Header,
-  SpeakOut,
-  SubmitAName,
-  Footer,
-  PreviousRulings,
-} from './components'
+import { Routes, Route } from 'react-router-dom'
+import { Nav, Footer } from './components'
 import { ManagerProvider } from './context'
+import { Home, PastTrials } from './pages'
 
 const App = () => {
   return (
     <ManagerProvider>
       <Nav />
-      <Header />
-      <div className="max-centered">
-        <SpeakOut />
-        <PreviousRulings />
-        <SubmitAName />
-        <hr role="separator"></hr>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="past-trials" element={<PastTrials />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <Footer />
     </ManagerProvider>
   )
 }

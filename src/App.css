@@ -302,10 +302,6 @@ main h2 {
       padding: 1rem 2rem;
   }
 
-  .banner-bottom .banner__background {
-      top: -230%;
-  }
-
   .banner-bottom .banner__right {
       width: auto;
   }

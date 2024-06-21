@@ -22,6 +22,10 @@
   line-height: 2.5rem;
 }
 
+.nav__logo a { 
+  text-decoration: none;
+}
+
 .nav__hamburger {
   position: relative;
   top: 2rem;

@@ -1,10 +1,13 @@
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
     <nav className="nav" role="navigation">
       <div className="max-centered">
-        <h1 className="nav__logo">Rule of thumb.</h1>
+        <h1 className="nav__logo">
+          <Link to="/">Rule of thumb.</Link>
+        </h1>
         <button className="nav__hamburger icon-button">
           <svg width="25" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -16,7 +19,7 @@ const Nav = () => {
         </button>
         <ul className="nav__links">
           <li>
-            <a href="#">Past Trials</a>
+            <Link to="past-trials">Past Trials</Link>
           </li>
           <li>
             <a href="#">How It Works</a>
