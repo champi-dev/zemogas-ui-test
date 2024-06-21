@@ -1,6 +1,11 @@
 import './styles.css'
+import { useState } from 'react'
 
 const SubmitAName = () => {
+  const [status, setStatus] = useState<'default' | 'typing' | 'submitted'>(
+    'default',
+  )
+
   return (
     <aside
       className="banner banner-bottom"
@@ -16,14 +21,38 @@ const SubmitAName = () => {
         role="none"
       />
       <div className="banner__left">
-        <h2 className="banner__heading">
-          Is there anyone else you would want us to add?
+        <h2 className={`banner__heading ${status}`}>
+          {status !== 'submitted'
+            ? 'Is there anyone else you would want us to add?'
+            : 'Thank you for submitting!'}
         </h2>
       </div>
       <div className="banner__right">
-        <button className="banner__cta" data-testid="submit-name">
-          Submit a name
-        </button>
+        {status === 'default' ? (
+          <button
+            className="banner__cta"
+            data-testid="submit-name"
+            onClick={() => setStatus('typing')}
+          >
+            Submit a name
+          </button>
+        ) : (
+          <></>
+        )}
+
+        {status === 'typing' ? (
+          <input type="text" placeholder="Type a name" />
+        ) : (
+          <></>
+        )}
+
+        {status === 'typing' ? (
+          <button className="send-btn" onClick={() => setStatus('submitted')}>
+            Send
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     </aside>
   )
