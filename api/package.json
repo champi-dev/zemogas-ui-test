@@ -18,7 +18,8 @@
     "fastify": "^4.28.0",
     "firebase": "^10.12.2",
     "puppeteer": "^22.11.2",
-    "twitter-api-v2": "^1.17.1"
+    "twitter-api-v2": "^1.17.1",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.5.0",

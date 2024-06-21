@@ -1,2 +1,3 @@
 import { checkCelebrities } from './checkCelebrities.js'
-export { checkCelebrities }
+import { saveCelebrity } from './saveCelebrity.js'
+export { checkCelebrities, saveCelebrity }
