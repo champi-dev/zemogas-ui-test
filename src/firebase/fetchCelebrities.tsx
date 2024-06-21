@@ -18,6 +18,8 @@ export const fetchCelebrities = async (lastKey: string | null = null) => {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   const dbRef = ref(database, 'celebrities')
   let celebQuery
 

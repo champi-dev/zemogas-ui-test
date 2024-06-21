@@ -8,7 +8,9 @@ const firebaseConfig = {
   databaseURL: import.meta.env.VITE_DATABASE_URL,
 }
 
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app)
+const app = process.env.NODE_ENV !== 'test' && initializeApp(firebaseConfig)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+const database = process.env.NODE_ENV !== 'test' && getDatabase(app)
 
 export { database, fetchCelebrities, updateCelebrity }
