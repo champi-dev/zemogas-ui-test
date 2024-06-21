@@ -6,8 +6,6 @@ export const updateCelebrity = async (
   id: string,
   updates: Partial<SingleCelebrity>,
 ) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   const dbRef = ref(database, `celebrities/${id}`)
 
   try {
