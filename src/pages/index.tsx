@@ -1,3 +1,4 @@
 import Home from './Home'
 import PastTrials from './PastTrials'
-export { Home, PastTrials }
+import HowItWorks from './HowItWorks'
+export { Home, PastTrials, HowItWorks }

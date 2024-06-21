@@ -22,10 +22,7 @@ const Nav = () => {
             <Link to="past-trials">Past Trials</Link>
           </li>
           <li>
-            <a href="#">How It Works</a>
-          </li>
-          <li>
-            <a href="#">Login / Sign Up</a>
+            <Link to="how-it-works">How It Works</Link>
           </li>
           <li>
             <form>
