@@ -1,5 +1,3 @@
-> Live Demo https://zemogas-ui-test.web.app/
-
 # How to run the front-end
 
 * Preparation:
